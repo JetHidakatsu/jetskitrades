@@ -19,7 +19,7 @@ from env.latency_tracker import LatencyTracker
 from env.trading_logic import TradingLogic, TradingParameters
 from simulate import SimulationConfig, SimulationEngine
 from backtest import BacktestConfig, BacktestEngine
-from monitor import PerformanceMonitor
+from env.monitor import PerformanceMonitor
 
 # Global bot instance for signal handling
 bot: Optional[TradingBot] = None
