@@ -1,0 +1,76 @@
+# {{ module_name }}
+
+{{ module_doc.doc }}
+
+{% if module_doc.classes %}
+## Classes
+
+{% for class_name, class_doc in module_doc.classes.items() %}
+### {{ class_name }}
+
+{{ class_doc.doc }}
+
+{% if class_doc.methods %}
+#### Methods
+
+{% for method_name, method_doc in class_doc.methods.items() %}
+##### `{{ method_name }}`
+
+{{ method_doc.doc }}
+
+{% if method_doc.long_doc %}
+{{ method_doc.long_doc }}
+{% endif %}
+
+{% if method_doc.params %}
+Parameters:
+{% for param_name, param in method_doc.params.items() %}
+- `{{ param_name }}` ({{ param.type }}{% if param.default %}, default: {{ param.default }}{% endif %}): {{ param.doc }}
+{% endfor %}
+{% endif %}
+
+{% if method_doc.returns.doc %}
+Returns:
+{{ method_doc.returns.type }}: {{ method_doc.returns.doc }}
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+{% if class_doc.attributes %}
+#### Attributes
+
+{% for attr_name, attr in class_doc.attributes.items() %}
+- `{{ attr_name }}` ({{ attr.type }}): {{ attr.doc }}
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+{% if module_doc.functions %}
+## Functions
+
+{% for func_name, func_doc in module_doc.functions.items() %}
+### `{{ func_name }}`
+
+{{ func_doc.doc }}
+
+{% if func_doc.long_doc %}
+{{ func_doc.long_doc }}
+{% endif %}
+
+{% if func_doc.params %}
+Parameters:
+{% for param_name, param in func_doc.params.items() %}
+- `{{ param_name }}` ({{ param.type }}{% if param.default %}, default: {{ param.default }}{% endif %}): {{ param.doc }}
+{% endfor %}
+{% endif %}
+
+{% if func_doc.returns.doc %}
+Returns:
+{{ func_doc.returns.type }}: {{ func_doc.returns.doc }}
+{% endif %}
+
+{% endfor %}
+{% endif %}

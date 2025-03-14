@@ -8,9 +8,10 @@ import json
 from pathlib import Path
 from typing import Dict, Optional
 
+
 class SecretsManager:
     """Secure storage and management of sensitive configuration data"""
-    
+
     def __init__(self, secrets_file: str = ".env"):
         self.secrets_file = secrets_file
         self.salt_file = ".salt"
@@ -61,13 +62,11 @@ class SecretsManager:
                 raise ValueError("Passwords do not match")
 
         self._init_encryption(password)
-        
+
         # Encrypt secrets
         encrypted_data = {}
         for key, value in secrets.items():
-            encrypted_data[key] = base64.b64encode(
-                self._encrypt(value)
-            ).decode()
+            encrypted_data[key] = base64.b64encode(self._encrypt(value)).decode()
 
         # Store encrypted data
         with open(self.secrets_file, "w") as f:
@@ -85,7 +84,7 @@ class SecretsManager:
             password = getpass.getpass("Enter decryption password: ")
 
         self._init_encryption(password)
-        
+
         secrets = {}
         try:
             with open(self.secrets_file, "r") as f:
@@ -111,17 +110,18 @@ class SecretsManager:
             del current_secrets[key]
             self.store_secrets(current_secrets, password)
 
+
 def main():
     """CLI interface for secrets management"""
     manager = SecretsManager()
-    
+
     # Example secrets to store
     default_secrets = {
         "QUICKNODE_RPC_URL": "",
         "PRIVATE_KEY": "",
         "WALLET_ADDRESS": "",
     }
-    
+
     try:
         # Check if secrets file exists
         if not os.path.exists(manager.secrets_file):
@@ -130,16 +130,16 @@ def main():
             for key in default_secrets:
                 value = getpass.getpass(f"Enter {key}: ")
                 secrets[key] = value
-            
+
             password = getpass.getpass("Create encryption password: ")
             confirm = getpass.getpass("Confirm encryption password: ")
-            
+
             if password != confirm:
                 raise ValueError("Passwords do not match")
-                
+
             manager.store_secrets(secrets, password)
             print("Configuration securely stored!")
-            
+
         else:
             # Load existing secrets
             try:
@@ -149,25 +149,26 @@ def main():
                 for key in secrets:
                     masked_value = "****" + secrets[key][-4:] if secrets[key] else ""
                     print(f"{key}: {masked_value}")
-                    
+
             except ValueError as e:
                 print(f"Error loading secrets: {e}")
                 return
-                
+
             # Update secrets if needed
             update = input("Would you like to update any values? (y/n): ").lower()
-            if update == 'y':
+            if update == "y":
                 for key in secrets:
                     update_key = input(f"Update {key}? (y/n): ").lower()
-                    if update_key == 'y':
+                    if update_key == "y":
                         value = getpass.getpass(f"Enter new {key}: ")
                         manager.update_secret(key, value, password)
                 print("Configuration updated!")
-                
+
     except KeyboardInterrupt:
         print("\nOperation cancelled.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
 
 if __name__ == "__main__":
     main()

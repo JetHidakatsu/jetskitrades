@@ -14,44 +14,48 @@ and technical analysis settings.
 load_dotenv()
 
 # API configurations
-API_HOST: Optional[str] = os.getenv('API_HOST')
-QUICKNODE_WS_URL: Optional[str] = os.getenv('QUICKNODE_WS_URL')
-QUICKNODE_RPC_URL: Optional[str] = os.getenv('QUICKNODE_RPC_URL')
-RAYDIUM_API_HOST_SWAP: Optional[str] = os.getenv('RAYDIUM_API_HOST_SWAP')
-RAYDIUM_API_HOST_POOLS: Optional[str] = os.getenv('RAYDIUM_API_HOST_POOLS')
-RAYDIUM_API_HOST_TOKEN_LIST: Optional[str] = os.getenv('RAYDIUM_API_HOST_TOKEN_LIST')
-GMGN_ROUTER_API: Optional[str] = os.getenv('GMGN_ROUTER_API')
-GMGN_SUBMIT_TX_API: Optional[str] = os.getenv('GMGN_SUBMIT_TX_API')
-GMGN_SUBMIT_BUNDLE_TX_API: Optional[str] = os.getenv('GMGN_SUBMIT_BUNDLE_TX_API')
-GMGN_TX_STATUS_API: Optional[str] = os.getenv('GMGN_TX_STATUS_API')
+API_HOST: Optional[str] = os.getenv("API_HOST")
+QUICKNODE_WS_URL: Optional[str] = os.getenv("QUICKNODE_WS_URL")
+QUICKNODE_RPC_URL: Optional[str] = os.getenv("QUICKNODE_RPC_URL")
+RAYDIUM_API_HOST_SWAP: Optional[str] = os.getenv("RAYDIUM_API_HOST_SWAP")
+RAYDIUM_API_HOST_POOLS: Optional[str] = os.getenv("RAYDIUM_API_HOST_POOLS")
+RAYDIUM_API_HOST_TOKEN_LIST: Optional[str] = os.getenv("RAYDIUM_API_HOST_TOKEN_LIST")
+GMGN_ROUTER_API: Optional[str] = os.getenv("GMGN_ROUTER_API")
+GMGN_SUBMIT_TX_API: Optional[str] = os.getenv("GMGN_SUBMIT_TX_API")
+GMGN_SUBMIT_BUNDLE_TX_API: Optional[str] = os.getenv("GMGN_SUBMIT_BUNDLE_TX_API")
+GMGN_TX_STATUS_API: Optional[str] = os.getenv("GMGN_TX_STATUS_API")
 
 # Token trading configurations
-inputToken: Optional[str] = os.getenv('INPUT_TOKEN')
-outputToken: Optional[str] = os.getenv('OUTPUT_TOKEN')
+inputToken: Optional[str] = os.getenv("INPUT_TOKEN")
+outputToken: Optional[str] = os.getenv("OUTPUT_TOKEN")
 
 # Error handling for TRADE_AMOUNT to ensure it's an integer
 try:
-    amount = int(os.getenv('TRADE_AMOUNT', '0'))
+    amount = int(os.getenv("TRADE_AMOUNT", "0"))
 except ValueError:
     print("TRADE_AMOUNT must be an integer. Using default value 0.")
     amount = 0
 
-fromAddress: Optional[str] = os.getenv('FROM_ADDRESS')
+fromAddress: Optional[str] = os.getenv("FROM_ADDRESS")
 
 # Error handling for SLIPPAGE to ensure it's a float
 try:
-    slippage = float(os.getenv('SLIPPAGE', '0.01'))
+    slippage = float(os.getenv("SLIPPAGE", "0.01"))
 except ValueError:
     print("SLIPPAGE must be a float. Using default value 0.01")
     slippage = 0.01
 
 # Sensitive information - Ensure this is securely stored in .env and not exposed
-PRIVATE_KEY: Optional[str] = os.getenv('PRIVATE_KEY')
+PRIVATE_KEY: Optional[str] = os.getenv("PRIVATE_KEY")
 
 # CPMM Pool Program IDs
-CREATE_CPMM_POOL_PROGRAM: Optional[str] = os.getenv('CREATE_CPMM_POOL_PROGRAM_ID', 'INSERT_ACTUAL_ID_HERE')
+CREATE_CPMM_POOL_PROGRAM: Optional[str] = os.getenv(
+    "CREATE_CPMM_POOL_PROGRAM_ID", "INSERT_ACTUAL_ID_HERE"
+)
 # Please replace 'INSERT_ACTUAL_ID_HERE' with the actual program ID if available
-DEV_CREATE_CPMM_POOL_PROGRAM: Optional[str] = os.getenv('DEV_CREATE_CPMM_POOL_PROGRAM_ID', '9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin')
+DEV_CREATE_CPMM_POOL_PROGRAM: Optional[str] = os.getenv(
+    "DEV_CREATE_CPMM_POOL_PROGRAM_ID", "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin"
+)
 
 # Constants for trading parameters
 # TODO: Consider if these values need to be configurable or if they're fixed
@@ -70,7 +74,7 @@ LONG_SMA_PERIOD = 50
 RSI_PERIOD = 14
 
 # Memecoin-specific parameters
-MEMECOIN_VOLATILITY_FACTOR = 2.0  
+MEMECOIN_VOLATILITY_FACTOR = 2.0
 MEMECOIN_LIQUIDITY_THRESHOLD = 100000
 
 # Quantum configuration

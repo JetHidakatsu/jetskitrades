@@ -1,0 +1,28 @@
+#!/bin/bash
+
+echo "Running pre-commit checks..."
+
+# Run black formatter
+echo "Running black formatter..."
+python -m black . || exit 1
+
+# Run flake8
+echo "Running flake8..."
+python -m flake8 . || exit 1
+
+# Run mypy type checking
+echo "Running type checker..."
+python -m mypy . || exit 1
+
+# Run pylint
+echo "Running pylint..."
+python -m pylint env/ || exit 1
+
+# Generate documentation
+echo "Generating documentation..."
+python tools/generate_docs_v2.py || exit 1
+
+# Add generated documentation to the commit
+git add docs/api/
+
+echo "All pre-commit checks passed!"
