@@ -1,0 +1,117 @@
+[
+  {
+    "timestamp": "2025-03-09T12:34:28.818286",
+    "pool_id": "test_pool_0",
+    "type": "buy",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 0.0001,
+    "balance": 0.109999,
+    "metrics": {
+      "status": "error",
+      "error": "'MockTradingParameters' object has no attribute 'moonbag_pct'"
+    }
+  },
+  {
+    "timestamp": "2025-03-09T12:34:29.936543",
+    "pool_id": "test_pool_0",
+    "type": "sell",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 0.0001,
+    "balance": 0.119998,
+    "metrics": null
+  },
+  {
+    "timestamp": "2025-03-09T12:34:31.057973",
+    "pool_id": "test_pool_1",
+    "type": "buy",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 5e-05,
+    "balance": 0.109997,
+    "metrics": {
+      "status": "error",
+      "error": "'MockTradingParameters' object has no attribute 'moonbag_pct'"
+    }
+  },
+  {
+    "timestamp": "2025-03-09T12:34:32.180092",
+    "pool_id": "test_pool_1",
+    "type": "sell",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 5e-05,
+    "balance": 0.11999599999999999,
+    "metrics": null
+  },
+  {
+    "timestamp": "2025-03-09T12:34:33.305001",
+    "pool_id": "test_pool_2",
+    "type": "buy",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 3.3333333333333335e-05,
+    "balance": 0.109995,
+    "metrics": {
+      "status": "error",
+      "error": "'MockTradingParameters' object has no attribute 'moonbag_pct'"
+    }
+  },
+  {
+    "timestamp": "2025-03-09T12:34:34.423574",
+    "pool_id": "test_pool_2",
+    "type": "sell",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 3.3333333333333335e-05,
+    "balance": 0.11999399999999999,
+    "metrics": null
+  },
+  {
+    "timestamp": "2025-03-09T12:34:35.545296",
+    "pool_id": "test_pool_3",
+    "type": "buy",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 2.5e-05,
+    "balance": 0.109993,
+    "metrics": {
+      "status": "error",
+      "error": "'MockTradingParameters' object has no attribute 'moonbag_pct'"
+    }
+  },
+  {
+    "timestamp": "2025-03-09T12:34:36.670486",
+    "pool_id": "test_pool_3",
+    "type": "sell",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 2.5e-05,
+    "balance": 0.11999199999999999,
+    "metrics": null
+  },
+  {
+    "timestamp": "2025-03-09T12:34:37.796313",
+    "pool_id": "test_pool_4",
+    "type": "buy",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 2e-05,
+    "balance": 0.10999099999999999,
+    "metrics": {
+      "status": "error",
+      "error": "'MockTradingParameters' object has no attribute 'moonbag_pct'"
+    }
+  },
+  {
+    "timestamp": "2025-03-09T12:34:38.920329",
+    "pool_id": "test_pool_4",
+    "type": "sell",
+    "size": 0.01,
+    "fees": 1e-06,
+    "slippage": 2e-05,
+    "balance": 0.11998999999999999,
+    "metrics": null
+  }
+]

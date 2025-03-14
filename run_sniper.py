@@ -23,97 +23,95 @@ trades_completed = 0
 total_profit = 0.0
 moonbag_positions: Dict[str, float] = {}
 
+
 def setup_logging():
     """Setup logging configuration"""
     log_file = f"sniper_bot_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-    handlers = [
-        logging.StreamHandler(),
-        logging.FileHandler(log_file)
-    ]
-    
+    handlers = [logging.StreamHandler(), logging.FileHandler(log_file)]
+
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=handlers
+        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        handlers=handlers,
     )
     return logging.getLogger(__name__)
 
-async def execute_trade(trading_logic: TradingLogic, pool_metrics: PoolMetrics) -> Dict[str, Any]:
+
+async def execute_trade(
+    trading_logic: TradingLogic, pool_metrics: PoolMetrics
+) -> Dict[str, Any]:
     """Execute a single trade with the sniper strategy"""
     global trades_completed, total_profit, moonbag_positions
-    
+
     try:
         # Calculate position size (3% of available capital)
         position_size = trading_logic.params.initial_capital * 0.03
-        
+
         # Execute entry
         success = await trading_logic.execute_entry(
             pool_id=f"pool_{trades_completed}",
             position_size=position_size,
-            pool_metrics=pool_metrics
+            pool_metrics=pool_metrics,
         )
-        
+
         if success:
             position = trading_logic.active_positions[f"pool_{trades_completed}"]
             moonbag_size = position.moonbag_size
-            
+
             # Simulate price movement (70% chance of profit)
             if trades_completed % 3 != 0:  # Profitable trade
                 current_price = pool_metrics.price_impact * 1.6  # 60% gain
                 result = await trading_logic.manage_position(
                     pool_id=f"pool_{trades_completed}",
                     current_price=current_price,
-                    pool_metrics=pool_metrics
+                    pool_metrics=pool_metrics,
                 )
-                
+
                 # Calculate profit
                 exit_size = position_size - moonbag_size
                 profit = exit_size * 0.5  # 50% gain on exit portion
                 total_profit += profit
-                
+
                 # Track moonbag
                 moonbag_positions[f"pool_{trades_completed}"] = moonbag_size
-                
+
                 return {
-                    'status': 'take_profit',
-                    'profit': profit,
-                    'moonbag': moonbag_size
+                    "status": "take_profit",
+                    "profit": profit,
+                    "moonbag": moonbag_size,
                 }
-                
+
             else:  # Stop loss trade
                 current_price = pool_metrics.price_impact * 0.7  # 30% drop
                 result = await trading_logic.manage_position(
                     pool_id=f"pool_{trades_completed}",
                     current_price=current_price,
-                    pool_metrics=pool_metrics
+                    pool_metrics=pool_metrics,
                 )
-                
+
                 # Calculate loss
                 loss = position_size * 0.2  # 20% loss
                 total_profit -= loss
-                
-                return {
-                    'status': 'stop_loss',
-                    'loss': loss,
-                    'moonbag': 0
-                }
+
+                return {"status": "stop_loss", "loss": loss, "moonbag": 0}
     except Exception as e:
         logging.error(f"Error executing trade: {e}")
-        return {'status': 'error', 'error': str(e)}
+        return {"status": "error", "error": str(e)}
+
 
 async def run_sniper_strategy():
     """Run the memecoin sniper strategy for 10 trades"""
     global bot, trades_completed
-    
+
     logger = logging.getLogger(__name__)
     logger.info("🚀 Starting memecoin sniper strategy")
-    
+
     try:
         # Initialize components
         quantum_selector = QuantumPoolSelector()
         sentiment_analyzer = SentimentAnalyzer()
         latency_tracker = LatencyTracker()
-        
+
         # Initialize trading logic with memecoin parameters
         trading_logic = TradingLogic(
             quantum_selector=quantum_selector,
@@ -125,25 +123,25 @@ async def run_sniper_strategy():
                 initial_capital=0.12,  # 0.12 SOL
                 max_position_size=0.05,  # 5% max position
                 min_position_size=0.01,  # 1% min position
-                risk_factor=0.4,        # Conservative risk
-                max_slippage=0.05,      # 5% max slippage
-                min_liquidity=0.01,     # 0.01 SOL min liquidity
-                moonbag_pct=0.15        # 15% moonbag
-            )
+                risk_factor=0.4,  # Conservative risk
+                max_slippage=0.05,  # 5% max slippage
+                min_liquidity=0.01,  # 0.01 SOL min liquidity
+                moonbag_pct=0.15,  # 15% moonbag
+            ),
         )
-        
+
         # Initialize bot
         bot = TradingBot()
         bot.trading_logic = trading_logic
-        
+
         # Start performance monitor
         monitor = PerformanceMonitor()
         await monitor.start_monitoring()
-        
+
         # Execute 10 trades
         while trades_completed < 10:
             logger.info(f"\nExecuting trade {trades_completed + 1}/10")
-            
+
             # Create sample pool metrics
             pool_metrics = PoolMetrics(
                 liquidity=0.1,
@@ -155,39 +153,46 @@ async def run_sniper_strategy():
                 depth_scores={"depth1": 0.5},
                 market_conditions=None,
                 total_supply=1000000.0,
-                quantum_score=0.85
+                quantum_score=0.85,
             )
-            
+
             # Execute trade
             result = await execute_trade(trading_logic, pool_metrics)
-            
+
             # Log results
-            if result['status'] == 'take_profit':
-                logger.info(f"Trade {trades_completed + 1} - PROFIT: {result['profit']:.4f} SOL")
+            if result["status"] == "take_profit":
+                logger.info(
+                    f"Trade {trades_completed + 1} - PROFIT: {result['profit']:.4f} SOL"
+                )
                 logger.info(f"Moonbag retained: {result['moonbag']:.4f} SOL")
-            elif result['status'] == 'stop_loss':
-                logger.info(f"Trade {trades_completed + 1} - LOSS: {result['loss']:.4f} SOL")
+            elif result["status"] == "stop_loss":
+                logger.info(
+                    f"Trade {trades_completed + 1} - LOSS: {result['loss']:.4f} SOL"
+                )
             else:
-                logger.error(f"Trade {trades_completed + 1} - ERROR: {result.get('error', 'Unknown error')}")
-            
+                logger.error(
+                    f"Trade {trades_completed + 1} - ERROR: {result.get('error', 'Unknown error')}"
+                )
+
             trades_completed += 1
-            
+
             # Add small delay between trades
             await asyncio.sleep(1)
-        
+
         # Print final results
         logger.info("\n=== Final Results ===")
         logger.info(f"Total Profit/Loss: {total_profit:.4f} SOL")
         logger.info(f"Active Moonbag Positions: {len(moonbag_positions)}")
         logger.info(f"Total Moonbag Value: {sum(moonbag_positions.values()):.4f} SOL")
         logger.info(f"Win Rate: {(len(moonbag_positions) / 10) * 100:.1f}%")
-        
+
     except Exception as e:
         logger.error(f"Strategy execution failed: {str(e)}", exc_info=True)
         raise
     finally:
         if bot:
             await bot.stop()
+
 
 def handle_shutdown(signum, frame):
     """Handle shutdown signals"""
@@ -199,18 +204,19 @@ def handle_shutdown(signum, frame):
         else:
             loop.run_until_complete(bot.stop())
 
+
 def main():
     """Main entry point"""
     # Load environment variables
     load_dotenv()
-    
+
     # Setup logging
     logger = setup_logging()
-    
+
     # Register signal handlers
     signal.signal(signal.SIGINT, handle_shutdown)
     signal.signal(signal.SIGTERM, handle_shutdown)
-    
+
     try:
         loop = asyncio.get_event_loop()
         loop.run_until_complete(run_sniper_strategy())
@@ -225,6 +231,7 @@ def main():
         sys.exit(1)
     finally:
         loop.close()
+
 
 if __name__ == "__main__":
     main()

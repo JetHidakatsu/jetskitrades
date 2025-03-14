@@ -1,0 +1,43 @@
+# API Documentation
+
+## Overview
+This documentation is automatically generated from the codebase's docstrings and type hints. It provides a comprehensive reference for all modules, classes, and functions in the Solana Bot project.
+
+## Modules
+
+{% for module in modules %}
+- [{{ module }}]({{ module }}.md)
+{% endfor %}
+
+## Documentation Sections
+
+### Core Components
+- Trading Bot Implementation
+- Position Management
+- Order Execution
+- Market Analysis
+
+### Utilities
+- Performance Monitoring
+- Data Collection
+- Configuration Management
+- Testing Tools
+
+### Integration
+- Solana Network Integration
+- Raydium Protocol Integration
+- External API Connections
+
+## Development
+For information about contributing to the documentation:
+1. Ensure your code includes proper docstrings and type hints
+2. Run the documentation generator: `python tools/generate_docs.py`
+3. Review the generated documentation in the `docs/api` directory
+4. Submit documentation improvements through pull requests
+
+## Best Practices
+- Use descriptive docstrings for all public functions and classes
+- Include type hints for parameters and return values
+- Document exceptions that may be raised
+- Provide usage examples in docstrings for complex functionality
+- Keep documentation up to date with code changes
