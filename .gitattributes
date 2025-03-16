@@ -1,0 +1,52 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Python files
+*.py text diff=python
+*.pyi text diff=python
+
+# Documentation
+*.md text diff=markdown
+*.rst text
+*.txt text
+
+# Scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Configuration
+*.yml text
+*.yaml text
+*.json text
+*.toml text
+*.ini text
+*.cfg text
+.env* text
+.flake8 text
+.gitattributes text
+.gitignore text
+pytest.ini text
+mypy.ini text
+
+# Source files
+*.pxd text diff=python
+*.py3 text diff=python
+*.pyw text diff=python
+*.pyx text diff=python
+
+# Binary files
+*.db binary
+*.p binary
+*.pkl binary
+*.pyc binary
+*.pyd binary
+*.pyo binary
+*.so binary
+
+# Jupyter notebook
+*.ipynb text
+
+# Make sure line endings are normalized for these files
+*.py text eol=lf
+requirements*.txt text eol=lf

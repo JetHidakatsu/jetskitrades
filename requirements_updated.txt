@@ -1,0 +1,25 @@
+# Core dependencies with security updates
+solana==0.36.6  # Major update with security fixes
+python-dotenv==1.0.0  # Current version is stable
+aiohttp==3.11.13  # Security update
+websockets==11.0.3  # Keep current version due to solana compatibility
+cryptography==44.0.2  # Security update
+
+# Data science and quantum dependencies
+qiskit==0.44.1  # Current version is stable
+pandas==2.0.3  # Current version is stable
+numpy==1.24.3  # Current version is stable
+
+# API and networking
+requests==2.31.0  # Current version has security fixes
+python-binance==1.0.19  # Current version is stable
+rsa==4.9  # Security update
+
+# Testing dependencies
+pytest==7.4.0  # Current version is stable
+pytest-asyncio==0.21.1  # Current version is stable
+pytest-cov==4.1.0  # Current version is stable
+pytest-mock==3.11.1  # Current version is stable
+
+# Additional security-related dependencies
+setuptools>=65.5.1  # Security update

@@ -11,6 +11,8 @@ import pandas as pd
 from pathlib import Path
 import json
 import random
+import sys
+from solana.rpc.async_api import AsyncClient
 
 from env.quantum_pool_selector import QuantumPoolSelector, PoolMetrics
 from env.sentiment_analyzer import SentimentAnalyzer
@@ -404,7 +406,11 @@ def main():
         random_seed=args.seed,
     )
 
-    quantum_selector = QuantumPoolSelector()
+    # Initialize RPC client
+    rpc_client = AsyncClient("https://api.mainnet-beta.solana.com")
+
+    # Initialize components
+    quantum_selector = QuantumPoolSelector(rpc_client)
     sentiment_analyzer = SentimentAnalyzer()
     latency_tracker = LatencyTracker()
 

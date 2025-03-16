@@ -13,6 +13,7 @@ import pandas as pd
 import numpy as np
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
+from solana.rpc.async_api import AsyncClient
 
 from env.quantum_pool_selector import QuantumPoolSelector, PoolMetrics
 from env.sentiment_analyzer import SentimentAnalyzer
@@ -66,8 +67,11 @@ class BacktestEngine:
         self.logger = logging.getLogger(__name__)
         self.helius_provider = helius_provider
 
+        # Initialize RPC client
+        self.rpc_client = AsyncClient("https://api.mainnet-beta.solana.com")
+
         # Initialize components
-        self.quantum_selector = QuantumPoolSelector()
+        self.quantum_selector = QuantumPoolSelector(self.rpc_client)
         self.sentiment_analyzer = SentimentAnalyzer()
         self.latency_tracker = LatencyTracker(metrics_port=8006)
 

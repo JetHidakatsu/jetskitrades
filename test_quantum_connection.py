@@ -1,4 +1,5 @@
 from env.quantum_pool_selector import QuantumPoolSelector, PoolMetrics
+from env.tests.mock_async_client import MockAsyncClient
 import logging
 
 # Configure logging
@@ -8,8 +9,9 @@ logging.basicConfig(
 
 
 def test_quantum_connection():
-    # Initialize the quantum pool selector
-    selector = QuantumPoolSelector()
+    # Initialize mock client and quantum pool selector
+    mock_client = MockAsyncClient()
+    selector = QuantumPoolSelector(mock_client)
 
     # Create some test metrics
     test_metrics = PoolMetrics(

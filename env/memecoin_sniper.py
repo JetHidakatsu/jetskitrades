@@ -11,7 +11,8 @@ from solana.rpc.async_api import AsyncClient
 from .quantum_pool_selector import QuantumPoolSelector, PoolMetrics
 from .trading_logic import TradingLogic, TradingParameters
 from .sentiment_analyzer import SentimentAnalyzer
-from .transaction_executor import TransactionExecutor
+from .transaction_executor_v4 import TransactionExecutorV4, TransactionConfig
+from .parallel_transaction_executor import RpcEndpoint
 from .pool_validator import PoolValidator
 from .latency_tracker import LatencyTracker
 from .mempool_monitor import MempoolMonitor
@@ -51,9 +52,31 @@ class MemecoinSniper:
 
         self.latency_tracker = LatencyTracker()
 
-        self.transaction_executor = TransactionExecutor(
+        # Configure RPC endpoints for parallel execution
+        rpc_endpoints = [
+            RpcEndpoint(url=CONFIG.network.rpc_url, weight=1.0),
+            RpcEndpoint(url=CONFIG.network.backup_rpc_url, weight=0.8)
+        ] if hasattr(CONFIG.network, 'backup_rpc_url') else None
+
+        # Initialize transaction executor with optimized config
+        tx_config = TransactionConfig(
+            simulation_enabled=True,
+            dynamic_cu_adjustment=True,
+            preflight_enabled=False,  # Skip preflight for faster execution
+            max_bundle_size=3,  # Bundle up to 3 transactions
+            base_compute_unit_limit=300_000,  # Higher base limit for memecoins
+            min_compute_unit_price=2_000,  # Higher minimum price
+            max_compute_unit_price=1_000_000,
+            max_retries=5,  # Increased retries for memecoin transactions
+            retry_delay=0.5  # Faster retry for memecoin opportunities
+        )
+        
+        self.transaction_executor = TransactionExecutorV4(
             client=self.client,
-            latency_tracker=self.latency_tracker
+            latency_tracker=self.latency_tracker,
+            pool_validator=self.pool_validator,
+            config=tx_config,
+            rpc_endpoints=rpc_endpoints
         )
 
         # Initialize mempool monitor with callback
@@ -231,10 +254,18 @@ class MemecoinSniper:
 
     def get_stats(self) -> Dict[str, Any]:
         """Get current statistics"""
+        tx_metrics = self.transaction_executor.get_metrics()
         return {
             "running": self.running,
             **self.performance_metrics,
             "quantum_stats": {
                 "total_pools_scored": self.quantum_selector.score_pool.__dict__.get("call_count", 0)
+            },
+            "transaction_stats": {
+                "success_rate": tx_metrics["success_rate"],
+                "avg_latency": tx_metrics["average_latency"],
+                "total_transactions": tx_metrics["total_transactions"],
+                "compute_unit_stats": tx_metrics.get("compute_unit_stats", {}),
+                "parallel_execution": tx_metrics.get("parallel_stats", None)
             }
         }

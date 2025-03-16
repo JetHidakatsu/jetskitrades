@@ -93,6 +93,7 @@ IMPORTANT: Never share your `.env` file or commit it to version control. It cont
 - [Trading Strategy](docs/STRATEGY.md)
 - [Backtesting System](docs/BACKTESTING.md)
 - [API Integration](docs/API.md)
+- [Debugging Guide](docs/DEBUGGING.md)
 
 ## Backtesting
 
@@ -160,28 +161,40 @@ The bot is optimized for:
 - High throughput
 - Reliable execution
 
-## Testing
+## Testing and Debugging
+
+### Running Tests
 
 Run different test categories:
 
 ```bash
 # All tests
-python run_backtest_tests.py
+python run_tests_debug.py
 
-# Unit tests only
-python run_backtest_tests.py --unit-only
+# Specific test file
+python run_tests_debug.py env/tests/test_file.py
 
-# Integration tests
-python run_backtest_tests.py --integration-only
-
-# Performance tests
-python run_backtest_tests.py --performance-only
-
-# Generate reports
-python run_backtest_tests.py --coverage --html-report
+# Test category (using VSCode launch configurations)
+- Debug current test file
+- Debug all tests
+- Debug backtest tests
+- Debug integration tests
+- Debug trading tests
 ```
 
-Test reports and metrics are available in:
+### Debugging Features
+
+The project includes comprehensive debugging support:
+- VSCode launch configurations for different test scenarios
+- Integrated logging and breakpoint support
+- Environment variable management
+- Detailed error reporting
+
+For detailed information about debugging capabilities, see [Debugging Guide](docs/DEBUGGING.md).
+
+### Test Reports
+
+Test results and metrics are available in:
 - Coverage: `reports/coverage/index.html`
 - Test Results: `reports/test_results/[timestamp]/report.html`
 
