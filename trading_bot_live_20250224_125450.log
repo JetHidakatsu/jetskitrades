@@ -1,0 +1,8 @@
+2025-02-24 12:54:51,415 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-24 12:54:51,418 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-24 12:54:51,531 - env.trading_bot - ERROR - Mempool monitoring error: 'MempoolMonitor' object has no attribute 'start'
+Traceback (most recent call last):
+  File "C:\Users\Golde\OneDrive\Desktop\my-solana-bot\env\trading_bot.py", line 135, in _monitor_mempool_with_retries
+    await self.monitor.start()
+          ^^^^^^^^^^^^^^^^^^
+AttributeError: 'MempoolMonitor' object has no attribute 'start'

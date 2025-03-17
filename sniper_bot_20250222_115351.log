@@ -1,0 +1,17 @@
+2025-02-22 11:53:51,017 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 11:53:51,294 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 11:53:51,635 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-22 11:53:51,636 - __main__ - INFO - 
+Executing trade 1/1
+2025-02-22 11:53:51,680 - env.monitor_simple - INFO - Starting performance monitoring
+2025-02-22 11:53:51,908 - env.monitor_simple - INFO - System Health - CPU: 0.0%, Memory: 61.3MB, Disk: 35.8%, Network: 125.4ms
+2025-02-22 11:53:52,178 - env.latency_tracker - INFO - Event completed - ID: trade_pool_0_1740250432177, Latency: 0.43ms, Success: True
+2025-02-22 11:53:52,182 - env.trading_bot - INFO - RPC endpoint validated
+2025-02-22 11:53:52,242 - env.transaction_executor - INFO - Transaction metrics - Success rate: 100.00%, Avg latency: 0.00s
+2025-02-22 11:53:52,242 - __main__ - INFO - Trade 1 - LOSS: 0.0007 SOL
+2025-02-22 11:53:52,243 - __main__ - INFO - 
+=== Final Results ===
+2025-02-22 11:53:52,243 - __main__ - INFO - Total Profit/Loss: -0.0007 SOL
+2025-02-22 11:53:52,243 - __main__ - INFO - Active Moonbag Positions: 0
+2025-02-22 11:53:52,243 - __main__ - INFO - Total Moonbag Value: 0.0000 SOL
+2025-02-22 11:53:52,243 - __main__ - INFO - Win Rate: 0.0%

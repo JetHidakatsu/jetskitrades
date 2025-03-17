@@ -1,0 +1,27 @@
+2025-02-22 12:23:37,924 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 12:23:38,371 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 12:23:38,788 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-22 12:23:38,789 - __main__ - INFO - 
+Executing trade 1/3
+2025-02-22 12:23:38,897 - env.monitor_simple - INFO - Starting performance monitoring
+2025-02-22 12:23:39,176 - env.monitor_simple - INFO - System Health - CPU: 0.0%, Memory: 66.2MB, Disk: 35.9%, Network: 178.1ms
+2025-02-22 12:23:39,411 - env.transaction_executor - ERROR - Error creating swap transaction: Transaction.serialize() got an unexpected keyword argument 'recent_blockhash'
+2025-02-22 12:23:39,412 - env.transaction_executor - ERROR - Failed to create swap transaction
+2025-02-22 12:23:39,412 - __main__ - ERROR - Trade 1 - ERROR: Transaction failed
+2025-02-22 12:23:39,413 - env.trading_bot - INFO - RPC endpoint validated
+2025-02-22 12:23:40,417 - __main__ - INFO - 
+Executing trade 2/3
+2025-02-22 12:23:40,481 - env.transaction_executor - ERROR - Error creating swap transaction: Transaction.serialize() got an unexpected keyword argument 'recent_blockhash'
+2025-02-22 12:23:40,482 - env.transaction_executor - ERROR - Failed to create swap transaction
+2025-02-22 12:23:40,484 - __main__ - ERROR - Trade 2 - ERROR: Transaction failed
+2025-02-22 12:23:41,500 - __main__ - INFO - 
+Executing trade 3/3
+2025-02-22 12:23:41,565 - env.transaction_executor - ERROR - Error creating swap transaction: Transaction.serialize() got an unexpected keyword argument 'recent_blockhash'
+2025-02-22 12:23:41,567 - env.transaction_executor - ERROR - Failed to create swap transaction
+2025-02-22 12:23:41,567 - __main__ - ERROR - Trade 3 - ERROR: Transaction failed
+2025-02-22 12:23:42,571 - __main__ - INFO - 
+=== Final Results ===
+2025-02-22 12:23:42,571 - __main__ - INFO - Total Profit/Loss: 0.0000 SOL
+2025-02-22 12:23:42,572 - __main__ - INFO - Active Moonbag Positions: 0
+2025-02-22 12:23:42,572 - __main__ - INFO - Total Moonbag Value: 0.0000 SOL
+2025-02-22 12:23:42,572 - __main__ - INFO - Win Rate: 0.0%

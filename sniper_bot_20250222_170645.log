@@ -1,0 +1,36 @@
+2025-02-22 17:06:45,192 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 17:06:45,658 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 17:06:46,080 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-22 17:06:46,083 - __main__ - INFO - 
+Executing trade 1/3
+2025-02-22 17:06:46,206 - env.monitor_simple - INFO - Starting performance monitoring
+2025-02-22 17:06:46,589 - env.monitor_simple - INFO - System Health - CPU: 0.0%, Memory: 66.3MB, Disk: 35.9%, Network: 281.6ms
+2025-02-22 17:06:47,003 - env.trading_bot - INFO - RPC endpoint validated
+2025-02-22 17:06:47,020 - env.transaction_executor - ERROR - Error creating swap transaction: argument 'keypairs': failed to extract enum Signer ('KeypairWrapper | PresignerWrapper | NullSignerWrapper')
+- variant KeypairWrapper (KeypairWrapper): TypeError: failed to extract field Signer::KeypairWrapper.0, caused by TypeError: 'list' object cannot be converted to 'Keypair'
+- variant PresignerWrapper (PresignerWrapper): TypeError: failed to extract field Signer::PresignerWrapper.0, caused by TypeError: 'list' object cannot be converted to 'Presigner'
+- variant NullSignerWrapper (NullSignerWrapper): TypeError: failed to extract field Signer::NullSignerWrapper.0, caused by TypeError: 'list' object cannot be converted to 'NullSigner'
+2025-02-22 17:06:47,020 - env.transaction_executor - ERROR - Failed to create swap transaction
+2025-02-22 17:06:47,021 - __main__ - ERROR - Trade 1 - ERROR: Transaction failed
+2025-02-22 17:06:48,028 - __main__ - INFO - 
+Executing trade 2/3
+2025-02-22 17:06:48,123 - env.transaction_executor - ERROR - Error creating swap transaction: argument 'keypairs': failed to extract enum Signer ('KeypairWrapper | PresignerWrapper | NullSignerWrapper')
+- variant KeypairWrapper (KeypairWrapper): TypeError: failed to extract field Signer::KeypairWrapper.0, caused by TypeError: 'list' object cannot be converted to 'Keypair'
+- variant PresignerWrapper (PresignerWrapper): TypeError: failed to extract field Signer::PresignerWrapper.0, caused by TypeError: 'list' object cannot be converted to 'Presigner'
+- variant NullSignerWrapper (NullSignerWrapper): TypeError: failed to extract field Signer::NullSignerWrapper.0, caused by TypeError: 'list' object cannot be converted to 'NullSigner'
+2025-02-22 17:06:48,124 - env.transaction_executor - ERROR - Failed to create swap transaction
+2025-02-22 17:06:48,124 - __main__ - ERROR - Trade 2 - ERROR: Transaction failed
+2025-02-22 17:06:49,128 - __main__ - INFO - 
+Executing trade 3/3
+2025-02-22 17:06:49,195 - env.transaction_executor - ERROR - Error creating swap transaction: argument 'keypairs': failed to extract enum Signer ('KeypairWrapper | PresignerWrapper | NullSignerWrapper')
+- variant KeypairWrapper (KeypairWrapper): TypeError: failed to extract field Signer::KeypairWrapper.0, caused by TypeError: 'list' object cannot be converted to 'Keypair'
+- variant PresignerWrapper (PresignerWrapper): TypeError: failed to extract field Signer::PresignerWrapper.0, caused by TypeError: 'list' object cannot be converted to 'Presigner'
+- variant NullSignerWrapper (NullSignerWrapper): TypeError: failed to extract field Signer::NullSignerWrapper.0, caused by TypeError: 'list' object cannot be converted to 'NullSigner'
+2025-02-22 17:06:49,196 - env.transaction_executor - ERROR - Failed to create swap transaction
+2025-02-22 17:06:49,196 - __main__ - ERROR - Trade 3 - ERROR: Transaction failed
+2025-02-22 17:06:50,208 - __main__ - INFO - 
+=== Final Results ===
+2025-02-22 17:06:50,209 - __main__ - INFO - Total Profit/Loss: 0.0000 SOL
+2025-02-22 17:06:50,209 - __main__ - INFO - Active Moonbag Positions: 0
+2025-02-22 17:06:50,210 - __main__ - INFO - Total Moonbag Value: 0.0000 SOL
+2025-02-22 17:06:50,211 - __main__ - INFO - Win Rate: 0.0%

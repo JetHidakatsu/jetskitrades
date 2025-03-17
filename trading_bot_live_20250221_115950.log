@@ -1,0 +1,3 @@
+2025-02-21 11:59:50,442 - root - INFO - Starting bot in live trading mode
+2025-02-21 11:59:50,848 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-21 11:59:51,143 - root - ERROR - Error running bot: MempoolMonitor.__init__() missing 2 required positional arguments: 'latency_tracker' and 'pool_validator'

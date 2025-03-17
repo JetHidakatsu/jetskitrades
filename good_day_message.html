@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Good Day Message Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            background: #f0f2f5;
+        }
+        .message-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Good Day Message Generator</h1>
+    <div class="message-box" id="message">
+        Click the button to generate a friendly message!
+    </div>
+    <button onclick="generateMessage()">Generate Message</button>
+
+    <script>
+        const messages = [
+            "Hope your day is filled with joy and success! 🌟",
+            "Wishing you an amazing day ahead! 🌈",
+            "May today bring you lots of reasons to smile! 😊",
+            "Have a fantastic day! You're awesome! ⭐",
+            "Sending positive vibes your way! 🌞",
+            "Make today amazing! You've got this! 💪",
+            "Have a wonderful day filled with good moments! 🎉",
+            "Shine bright today! You're doing great! ✨",
+            "Here's to a day as incredible as you are! 🌺",
+            "Wishing you the best day ever! 🎈"
+        ];
+
+        function generateMessage() {
+            const messageBox = document.getElementById('message');
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            messageBox.textContent = randomMessage;
+        }
+    </script>
+</body>
+</html>

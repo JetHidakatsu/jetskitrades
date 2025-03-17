@@ -1,0 +1,17 @@
+2025-02-22 11:49:15,226 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 11:49:15,553 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 11:49:15,824 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-22 11:49:15,825 - __main__ - INFO - 
+Executing trade 1/1
+2025-02-22 11:49:15,911 - env.monitor_simple - INFO - Starting performance monitoring
+2025-02-22 11:49:16,186 - env.monitor_simple - INFO - System Health - CPU: 0.0%, Memory: 61.2MB, Disk: 35.8%, Network: 170.3ms
+2025-02-22 11:49:16,403 - env.trading_bot - INFO - RPC endpoint validated
+2025-02-22 11:49:16,405 - env.transaction_executor - ERROR - Error creating swap transaction: object solders.pubkey.Pubkey can't be used in 'await' expression
+2025-02-22 11:49:16,405 - env.transaction_executor - ERROR - Failed to create swap transaction
+2025-02-22 11:49:16,405 - __main__ - ERROR - Trade 1 - ERROR: Transaction failed
+2025-02-22 11:49:16,405 - __main__ - INFO - 
+=== Final Results ===
+2025-02-22 11:49:16,405 - __main__ - INFO - Total Profit/Loss: 0.0000 SOL
+2025-02-22 11:49:16,406 - __main__ - INFO - Active Moonbag Positions: 0
+2025-02-22 11:49:16,406 - __main__ - INFO - Total Moonbag Value: 0.0000 SOL
+2025-02-22 11:49:16,406 - __main__ - INFO - Win Rate: 0.0%

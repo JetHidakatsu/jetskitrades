@@ -1,0 +1,17 @@
+2025-02-22 11:51:17,218 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 11:51:17,536 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 11:51:17,820 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-22 11:51:17,821 - __main__ - INFO - 
+Executing trade 1/1
+2025-02-22 11:51:17,884 - env.monitor_simple - INFO - Starting performance monitoring
+2025-02-22 11:51:18,135 - env.monitor_simple - INFO - System Health - CPU: 0.0%, Memory: 61.0MB, Disk: 35.8%, Network: 150.0ms
+2025-02-22 11:51:18,335 - env.transaction_executor - ERROR - Error creating swap transaction: Transaction.__new__() missing 3 required positional arguments: 'from_keypairs', 'message', and 'recent_blockhash'
+2025-02-22 11:51:18,336 - env.transaction_executor - ERROR - Failed to create swap transaction
+2025-02-22 11:51:18,337 - __main__ - ERROR - Trade 1 - ERROR: Transaction failed
+2025-02-22 11:51:18,337 - __main__ - INFO - 
+=== Final Results ===
+2025-02-22 11:51:18,338 - __main__ - INFO - Total Profit/Loss: 0.0000 SOL
+2025-02-22 11:51:18,338 - __main__ - INFO - Active Moonbag Positions: 0
+2025-02-22 11:51:18,338 - __main__ - INFO - Total Moonbag Value: 0.0000 SOL
+2025-02-22 11:51:18,338 - __main__ - INFO - Win Rate: 0.0%
+2025-02-22 11:51:18,339 - env.trading_bot - INFO - RPC endpoint validated

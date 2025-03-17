@@ -1,0 +1,30 @@
+2025-02-22 12:19:39,975 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 12:19:40,339 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 12:19:40,694 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-22 12:19:40,695 - __main__ - INFO - 
+Executing trade 1/3
+2025-02-22 12:19:40,833 - env.monitor_simple - INFO - Starting performance monitoring
+2025-02-22 12:19:41,087 - env.monitor_simple - INFO - System Health - CPU: 0.0%, Memory: 66.0MB, Disk: 35.9%, Network: 147.4ms
+2025-02-22 12:19:41,312 - env.trading_bot - INFO - RPC endpoint validated
+2025-02-22 12:19:48,330 - env.transaction_executor - ERROR - Max retries reached: 'Transaction' object has no attribute 'message'
+2025-02-22 12:19:48,331 - env.latency_tracker - INFO - Event completed - ID: trade_pool_0_1740251981312, Latency: 7019.24ms, Success: False
+2025-02-22 12:19:48,333 - env.latency_tracker - WARNING - High latency event detected - Event: trade_pool_0_1740251981312, Latency: 7019.24ms
+2025-02-22 12:19:48,333 - __main__ - ERROR - Trade 1 - ERROR: Transaction failed
+2025-02-22 12:19:49,341 - __main__ - INFO - 
+Executing trade 2/3
+2025-02-22 12:19:56,587 - env.transaction_executor - ERROR - Max retries reached: 'Transaction' object has no attribute 'message'
+2025-02-22 12:19:56,588 - env.latency_tracker - INFO - Event completed - ID: trade_pool_1_1740251989547, Latency: 7041.36ms, Success: False
+2025-02-22 12:19:56,589 - env.latency_tracker - WARNING - High latency event detected - Event: trade_pool_1_1740251989547, Latency: 7041.36ms
+2025-02-22 12:19:56,590 - __main__ - ERROR - Trade 2 - ERROR: Transaction failed
+2025-02-22 12:19:57,600 - __main__ - INFO - 
+Executing trade 3/3
+2025-02-22 12:20:04,843 - env.transaction_executor - ERROR - Max retries reached: 'Transaction' object has no attribute 'message'
+2025-02-22 12:20:04,843 - env.latency_tracker - INFO - Event completed - ID: trade_pool_2_1740251997810, Latency: 7033.38ms, Success: False
+2025-02-22 12:20:04,844 - env.latency_tracker - WARNING - High latency event detected - Event: trade_pool_2_1740251997810, Latency: 7033.38ms
+2025-02-22 12:20:04,845 - __main__ - ERROR - Trade 3 - ERROR: Transaction failed
+2025-02-22 12:20:05,852 - __main__ - INFO - 
+=== Final Results ===
+2025-02-22 12:20:05,854 - __main__ - INFO - Total Profit/Loss: 0.0000 SOL
+2025-02-22 12:20:05,854 - __main__ - INFO - Active Moonbag Positions: 0
+2025-02-22 12:20:05,855 - __main__ - INFO - Total Moonbag Value: 0.0000 SOL
+2025-02-22 12:20:05,856 - __main__ - INFO - Win Rate: 0.0%

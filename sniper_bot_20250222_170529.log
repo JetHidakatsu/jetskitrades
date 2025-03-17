@@ -1,0 +1,12 @@
+2025-02-22 17:05:29,994 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 17:05:30,456 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 17:05:30,836 - env.trading_bot - ERROR - Initialization failed: RaydiumSniper.__init__() missing 1 required positional argument: 'transaction_executor'
+2025-02-22 17:05:30,837 - __main__ - ERROR - Strategy execution failed: RaydiumSniper.__init__() missing 1 required positional argument: 'transaction_executor'
+Traceback (most recent call last):
+  File "C:\Users\Golde\OneDrive\Desktop\my-solana-bot\run_sniper_v2.py", line 162, in run_sniper_strategy
+    bot = TradingBot()
+  File "C:\Users\Golde\OneDrive\Desktop\my-solana-bot\env\trading_bot.py", line 61, in __init__
+    self.sniper = RaydiumSniper(self.client, keypair, self.latency_tracker)
+                  ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: RaydiumSniper.__init__() missing 1 required positional argument: 'transaction_executor'
+2025-02-22 17:05:30,841 - __main__ - ERROR - Unexpected error: RaydiumSniper.__init__() missing 1 required positional argument: 'transaction_executor'

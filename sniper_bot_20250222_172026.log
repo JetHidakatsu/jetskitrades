@@ -1,0 +1,63 @@
+2025-02-22 17:20:26,517 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 17:20:26,946 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 17:20:27,475 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-22 17:20:27,476 - __main__ - INFO - 
+Executing trade 1/3
+2025-02-22 17:20:27,590 - env.monitor_simple - INFO - Starting performance monitoring
+2025-02-22 17:20:29,259 - env.monitor_simple - INFO - System Health - CPU: 15.6%, Memory: 65.9MB, Disk: 35.9%, Network: 1567.2ms
+2025-02-22 17:20:29,601 - env.transaction_executor - INFO - Creating transaction with instruction: Instruction { program_id: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8, accounts: [AccountMeta { pubkey: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA, is_signer: false, is_writable: false }, AccountMeta { pubkey: 11111111111111111111111111111111, is_signer: false, is_writable: false }, AccountMeta { pubkey: 8ZuDXnMNtMFAxCe2MyxKuULASMm2w4k5DQZS4Zi8P3bu, is_signer: false, is_writable: true }, AccountMeta { pubkey: EVPReADLSSN8XFcK6dmgJigUn8AvDcYTij6fe6AuSqNW, is_signer: false, is_writable: true }, AccountMeta { pubkey: 7PHMDs1vKGVyG4cAGEGceNdZCBiDJkxixe69vStghAHE, is_signer: false, is_writable: true }, AccountMeta { pubkey: AKnL4NNf3DGWZJS6cPknBuEGnVsV4A4m5tgebLHaRSZ9, is_signer: true, is_writable: true }, AccountMeta { pubkey: Adu9g65zHkfFT65cXcdnTpQQFUeWoo1ZBfebF59h7btn, is_signer: false, is_writable: true }, AccountMeta { pubkey: Cef6NT4Dcx1aafSurM2KrZEPhR1Wt86WeuFUJ79Y2hXr, is_signer: false, is_writable: true }, AccountMeta { pubkey: SysvarRent111111111111111111111111111111111, is_signer: false, is_writable: false }], data: [1, 128, 238, 54, 0, 0, 0, 0, 0, 239, 142, 53, 0, 0, 0, 0, 0, 196, 9, 0, 0, 1, 0, 0, 0, 0] }
+2025-02-22 17:20:29,608 - env.transaction_executor - INFO - Setting recent blockhash: CQGCuNNK3t7HiHCBA8Jc3CrGd4PziiFRmrKUgP8VHUdG
+2025-02-22 17:20:29,609 - env.transaction_executor - INFO - Setting fee payer: AKnL4NNf3DGWZJS6cPknBuEGnVsV4A4m5tgebLHaRSZ9
+2025-02-22 17:20:29,610 - env.transaction_executor - INFO - Signing transaction...
+2025-02-22 17:20:29,611 - env.transaction_executor - INFO - Transaction signed successfully
+2025-02-22 17:20:29,611 - env.transaction_executor - INFO - Transaction details:
+2025-02-22 17:20:29,612 - env.transaction_executor - INFO - - Message: No message
+2025-02-22 17:20:29,612 - env.transaction_executor - INFO - - Signatures: (Signature(
+    4jFEzL9kXLrZn1yupcu5oGJrE1Nv4r3me42wNTD1nqvsg7ruwWxrHNGgErgk9ZSGiLaZccukaF87TP7ZY4oRv7G7,
+),)
+2025-02-22 17:20:29,612 - env.transaction_executor - INFO - - Recent blockhash: CQGCuNNK3t7HiHCBA8Jc3CrGd4PziiFRmrKUgP8VHUdG
+2025-02-22 17:20:29,613 - env.trading_bot - INFO - RPC endpoint validated
+2025-02-22 17:20:36,639 - env.transaction_executor - ERROR - Max retries reached: 'Transaction' object has no attribute 'message'
+2025-02-22 17:20:36,641 - env.latency_tracker - INFO - Event completed - ID: trade_pool_0_1740270029613, Latency: 7027.59ms, Success: False
+2025-02-22 17:20:36,641 - env.latency_tracker - WARNING - High latency event detected - Event: trade_pool_0_1740270029613, Latency: 7027.59ms
+2025-02-22 17:20:36,642 - __main__ - ERROR - Trade 1 - ERROR: Transaction failed
+2025-02-22 17:20:37,647 - __main__ - INFO - 
+Executing trade 2/3
+2025-02-22 17:20:37,863 - env.transaction_executor - INFO - Creating transaction with instruction: Instruction { program_id: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8, accounts: [AccountMeta { pubkey: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA, is_signer: false, is_writable: false }, AccountMeta { pubkey: 11111111111111111111111111111111, is_signer: false, is_writable: false }, AccountMeta { pubkey: 8ZuDXnMP2BuVCRQQj8yE86qymfjjjkV97U4Yx9WMP7zX, is_signer: false, is_writable: true }, AccountMeta { pubkey: 2xA4qrppVGmwbwLGcqiBFuNTakW7Z31mb3CYd5LFpK5U, is_signer: false, is_writable: true }, AccountMeta { pubkey: AmafwuE28jSKDT466hViUdL56F6NiqUS67gPeRoGvYqW, is_signer: false, is_writable: true }, AccountMeta { pubkey: AKnL4NNf3DGWZJS6cPknBuEGnVsV4A4m5tgebLHaRSZ9, is_signer: true, is_writable: true }, AccountMeta { pubkey: t2x833RcxVDHPuFCehdmoQqcy4vn9zJoFoQmbmmoTjn, is_signer: false, is_writable: true }, AccountMeta { pubkey: 4UkDTysDiJ2BtWMQa6wUAWNKh6gwnmXagpEp3yvQ9Yxn, is_signer: false, is_writable: true }, AccountMeta { pubkey: SysvarRent111111111111111111111111111111111, is_signer: false, is_writable: false }], data: [1, 128, 238, 54, 0, 0, 0, 0, 0, 239, 142, 53, 0, 0, 0, 0, 0, 196, 9, 0, 0, 1, 0, 0, 0, 0] }
+2025-02-22 17:20:37,865 - env.transaction_executor - INFO - Setting recent blockhash: GbAqLg58AuSMt37QuRFAEyMafDaBLi5tFTxLudtztsWe
+2025-02-22 17:20:37,865 - env.transaction_executor - INFO - Setting fee payer: AKnL4NNf3DGWZJS6cPknBuEGnVsV4A4m5tgebLHaRSZ9
+2025-02-22 17:20:37,866 - env.transaction_executor - INFO - Signing transaction...
+2025-02-22 17:20:37,866 - env.transaction_executor - INFO - Transaction signed successfully
+2025-02-22 17:20:37,866 - env.transaction_executor - INFO - Transaction details:
+2025-02-22 17:20:37,867 - env.transaction_executor - INFO - - Message: No message
+2025-02-22 17:20:37,867 - env.transaction_executor - INFO - - Signatures: (Signature(
+    2cvNYHjDc632RPmXffJE5kGLYMjkSoC5bgg4h2kod4gFztNWGEZdnV79awhJrjgEmzt9uaPvfGLaZuYMk8WSgkqR,
+),)
+2025-02-22 17:20:37,867 - env.transaction_executor - INFO - - Recent blockhash: GbAqLg58AuSMt37QuRFAEyMafDaBLi5tFTxLudtztsWe
+2025-02-22 17:20:44,881 - env.transaction_executor - ERROR - Max retries reached: 'Transaction' object has no attribute 'message'
+2025-02-22 17:20:44,883 - env.latency_tracker - INFO - Event completed - ID: trade_pool_1_1740270037867, Latency: 7015.51ms, Success: False
+2025-02-22 17:20:44,884 - env.latency_tracker - WARNING - High latency event detected - Event: trade_pool_1_1740270037867, Latency: 7015.51ms
+2025-02-22 17:20:44,884 - __main__ - ERROR - Trade 2 - ERROR: Transaction failed
+2025-02-22 17:20:45,894 - __main__ - INFO - 
+Executing trade 3/3
+2025-02-22 17:20:46,191 - env.transaction_executor - INFO - Creating transaction with instruction: Instruction { program_id: 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8, accounts: [AccountMeta { pubkey: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA, is_signer: false, is_writable: false }, AccountMeta { pubkey: 11111111111111111111111111111111, is_signer: false, is_writable: false }, AccountMeta { pubkey: 8ZuDXnMPA2ZoSeAo6Hz8LjMo6yiSYSED1XZfqjJaPCP9, is_signer: false, is_writable: true }, AccountMeta { pubkey: DtVqZQw8dofo1fHfsMFWmnEcepQSyKoFVtxxnNx4Ku6X, is_signer: false, is_writable: true }, AccountMeta { pubkey: AwVyGCyJykJJ9uUBHtnjFEVPxxnm6dYWHGFf1UnZ3ca, is_signer: false, is_writable: true }, AccountMeta { pubkey: AKnL4NNf3DGWZJS6cPknBuEGnVsV4A4m5tgebLHaRSZ9, is_signer: true, is_writable: true }, AccountMeta { pubkey: 6ka7YRNtStaE9JPcqxXb6obqve61EBpVo7GJRfjAithq, is_signer: false, is_writable: true }, AccountMeta { pubkey: 5wHrYtKX2vHAZiZZ5f39GgbSaayNT99LDssMh5jz3Y4o, is_signer: false, is_writable: true }, AccountMeta { pubkey: SysvarRent111111111111111111111111111111111, is_signer: false, is_writable: false }], data: [1, 128, 238, 54, 0, 0, 0, 0, 0, 239, 142, 53, 0, 0, 0, 0, 0, 196, 9, 0, 0, 1, 0, 0, 0, 0] }
+2025-02-22 17:20:46,192 - env.transaction_executor - INFO - Setting recent blockhash: 6nGicUmVuBYKK2M1cDjbSzGKFPtHmfZjMD2gXUHC6yDE
+2025-02-22 17:20:46,192 - env.transaction_executor - INFO - Setting fee payer: AKnL4NNf3DGWZJS6cPknBuEGnVsV4A4m5tgebLHaRSZ9
+2025-02-22 17:20:46,192 - env.transaction_executor - INFO - Signing transaction...
+2025-02-22 17:20:46,193 - env.transaction_executor - INFO - Transaction signed successfully
+2025-02-22 17:20:46,194 - env.transaction_executor - INFO - Transaction details:
+2025-02-22 17:20:46,194 - env.transaction_executor - INFO - - Message: No message
+2025-02-22 17:20:46,194 - env.transaction_executor - INFO - - Signatures: (Signature(
+    4q1X2bkKooGQuw9TMphcXYxMxaxapvvKdQ4XKN1LXNVVucQpykkQHmkRwostsTRoQ2HGu2iYuK1owExafhkWgHP1,
+),)
+2025-02-22 17:20:46,194 - env.transaction_executor - INFO - - Recent blockhash: 6nGicUmVuBYKK2M1cDjbSzGKFPtHmfZjMD2gXUHC6yDE
+2025-02-22 17:20:53,207 - env.transaction_executor - ERROR - Max retries reached: 'Transaction' object has no attribute 'message'
+2025-02-22 17:20:53,209 - env.latency_tracker - INFO - Event completed - ID: trade_pool_2_1740270046195, Latency: 7013.78ms, Success: False
+2025-02-22 17:20:53,210 - env.latency_tracker - WARNING - High latency event detected - Event: trade_pool_2_1740270046195, Latency: 7013.78ms
+2025-02-22 17:20:53,211 - __main__ - ERROR - Trade 3 - ERROR: Transaction failed
+2025-02-22 17:20:54,225 - __main__ - INFO - 
+=== Final Results ===
+2025-02-22 17:20:54,227 - __main__ - INFO - Total Profit/Loss: 0.0000 SOL
+2025-02-22 17:20:54,227 - __main__ - INFO - Active Moonbag Positions: 0
+2025-02-22 17:20:54,228 - __main__ - INFO - Total Moonbag Value: 0.0000 SOL
+2025-02-22 17:20:54,229 - __main__ - INFO - Win Rate: 0.0%

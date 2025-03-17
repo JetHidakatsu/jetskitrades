@@ -1,0 +1,29 @@
+2025-02-22 12:12:06,942 - __main__ - INFO - Starting memecoin sniper strategy
+2025-02-22 12:12:07,429 - env.latency_tracker - INFO - Metrics server started on port 8000
+2025-02-22 12:12:07,839 - env.trading_bot - INFO - TradingBot initialized successfully
+2025-02-22 12:12:07,840 - __main__ - INFO - 
+Executing trade 1/3
+2025-02-22 12:12:07,918 - env.monitor_simple - INFO - Starting performance monitoring
+2025-02-22 12:12:08,189 - env.monitor_simple - INFO - System Health - CPU: 0.0%, Memory: 60.5MB, Disk: 35.9%, Network: 164.7ms
+2025-02-22 12:12:08,417 - env.trading_bot - INFO - RPC endpoint validated
+2025-02-22 12:12:08,423 - env.latency_tracker - INFO - Event completed - ID: trade_pool_0_1740251528423, Latency: 0.33ms, Success: True
+2025-02-22 12:12:08,487 - env.transaction_executor - INFO - Transaction metrics - Success rate: 100.00%, Avg latency: 0.00s
+2025-02-22 12:12:08,488 - __main__ - INFO - Trade 1 - LOSS: 0.0007 SOL
+2025-02-22 12:12:09,492 - __main__ - INFO - 
+Executing trade 2/3
+2025-02-22 12:12:09,557 - env.latency_tracker - INFO - Event completed - ID: trade_pool_1_1740251529557, Latency: 0.06ms, Success: True
+2025-02-22 12:12:09,624 - env.transaction_executor - INFO - Transaction metrics - Success rate: 100.00%, Avg latency: 0.00s
+2025-02-22 12:12:09,634 - __main__ - INFO - Trade 2 - PROFIT: 0.0015 SOL
+2025-02-22 12:12:09,634 - __main__ - INFO - Moonbag retained: 0.0005 SOL
+2025-02-22 12:12:10,640 - __main__ - INFO - 
+Executing trade 3/3
+2025-02-22 12:12:10,701 - env.latency_tracker - INFO - Event completed - ID: trade_pool_2_1740251530701, Latency: 0.08ms, Success: True
+2025-02-22 12:12:10,770 - env.transaction_executor - INFO - Transaction metrics - Success rate: 100.00%, Avg latency: 0.00s
+2025-02-22 12:12:10,771 - __main__ - INFO - Trade 3 - PROFIT: 0.0015 SOL
+2025-02-22 12:12:10,771 - __main__ - INFO - Moonbag retained: 0.0005 SOL
+2025-02-22 12:12:11,785 - __main__ - INFO - 
+=== Final Results ===
+2025-02-22 12:12:11,785 - __main__ - INFO - Total Profit/Loss: 0.0023 SOL
+2025-02-22 12:12:11,786 - __main__ - INFO - Active Moonbag Positions: 2
+2025-02-22 12:12:11,786 - __main__ - INFO - Total Moonbag Value: 0.0011 SOL
+2025-02-22 12:12:11,787 - __main__ - INFO - Win Rate: 2.0%
