@@ -119,7 +119,7 @@ python-dotenv==1.0.0
 python-telegram-bot==21.10
 pytz==2025.1
 PyYAML==6.0.2
-qiskit==1.4.0
+qiskit>=1.4.2
 qiskit-aer==0.16.1
 qiskit-ibm-provider==0.11.0
 qiskit-ibm-runtime==0.22.0
